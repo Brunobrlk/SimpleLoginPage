@@ -10,13 +10,17 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.only(top: 60, left: 10, right: 10),
+      body: Container(
+        height: _size.height,
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(  // Logo image
+              Container(
+                // Logo image
+                margin: EdgeInsets.only(top:60),
                 child: Image(
                   image: AssetImage('assets/logo_loginNature.png'),
                   height: 200,
@@ -24,17 +28,22 @@ class _LoginPageState extends State<LoginPage> {
                   fit: BoxFit.fill,
                 ),
               ),
-              Container(  // Company name
+              Container(
+                // Company name
                 height: 100,
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(vertical: 30),
                 child: Text(
                   "Company name",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont('Tinos', color:Color(0xFF3aaf46), fontWeight: FontWeight.bold, fontSize: 45),
+                  style: GoogleFonts.getFont('Tinos',
+                      color: Color(0xFF3aaf46),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 45),
                 ),
               ),
-              Container(  // Fields: E-mail and Password
+              Container(
+                // Fields: E-mail and Password
                 margin: EdgeInsets.only(
                   bottom: 30,
                   right: 25,
@@ -43,7 +52,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: Form(
                   child: Column(
                     children: [
-                      TextField(  // E-mail Field
+                      TextField(
+                        // E-mail Field
                         style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                         decoration: InputDecoration(
                           isCollapsed: true,
@@ -59,7 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      TextField(  // Password Field
+                      TextField(
+                        // Password Field
                         style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -78,11 +89,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              RaisedButton( // Login Button
+              RaisedButton(
+                // Login Button
                 onPressed: () {
                   // Do an appropriate verification and save the login
                   Navigator.of(context).pushNamedAndRemoveUntil(
-        AppRoutes.HOME, (Route<dynamic> route) => false);
+                      AppRoutes.HOME, (Route<dynamic> route) => false);
                 },
                 elevation: 7,
                 padding: EdgeInsets.symmetric(horizontal: 35),
@@ -97,9 +109,11 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20,
               ),
-              Column( // Sing up and Recover password
+              Column(
+                // Sing up and Recover password
                 children: [
-                  FlatButton( // Recover password
+                  FlatButton(
+                    // Recover password
                     visualDensity: VisualDensity(vertical: -4),
                     onPressed: () {},
                     padding: EdgeInsets.all(0),
@@ -112,7 +126,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  FlatButton( // Create account
+                  FlatButton(
+                    // Create account
                     visualDensity: VisualDensity(vertical: -4),
                     onPressed: () {},
                     padding: EdgeInsets.all(0),

@@ -1,6 +1,6 @@
 # Basic layout Login Page
 
-![](screenshot.jpeg)
+[<img src="screenshot.jpeg" width="250"/>](screenshot.jpeg)
 
 ## Contributing
 
